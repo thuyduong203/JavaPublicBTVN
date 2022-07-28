@@ -20,7 +20,7 @@ public class Main {
             switch (luaChon) {
                 case 1: {
                     System.out.println("Nhập số phần tử của mảng: ");
-                    int n = sc.nextInt();
+                    int n = Integer.valueOf(sc.nextLine());
                     int[] mangSoNguyen = new int[n];
                     svImpl.nhapMang(mangSoNguyen);
                     System.out.println("Mảng bạn vừa nhập: ");
@@ -28,6 +28,7 @@ public class Main {
                     System.out.println("Tổng các số lẻ ở vtri chẵn trong mảng : " + svImpl.tongSoLe(mangSoNguyen));
                     System.out.println("Vị trí của min:");
                     svImpl.vtriMinTrongMang(mangSoNguyen);
+                    System.out.println();
                     System.out.println("Số chính phương trong mảng: ");
                     svImpl.hienThiSoChinhPhuong(mangSoNguyen);
                     System.out.println("Số nguyên tố trong mảng: ");

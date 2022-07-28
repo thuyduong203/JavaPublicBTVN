@@ -25,7 +25,7 @@ public class ServiceImpl implements Service {
     @Override
     public int tongSoLe(int[] mang) {
         int tong = 0;
-        for (int i = 0; i < mang.length; i += 2) {
+        for (int i = 1; i < mang.length; i += 2) {
             if (mang[i] % 2 != 0) {
                 tong += mang[i];
             }
@@ -49,17 +49,17 @@ public class ServiceImpl implements Service {
         int min = new ServiceImpl().timMin(mang);
         for (int i = 0; i < mang.length; i++) {
             if (mang[i] == min) {
-                System.out.print(i + " ");
+                System.out.print((i + 1) + " ");
             }
         }
     }
 
     @Override
     public boolean ktraSoChinhPhuong(int a) {
-        if (a == 0) {
+        if (a <= 0) {
             return false;
         } else {
-            for (int i = 1; i < a; i++) {
+            for (int i = 1; i <= a; i++) {
                 if (i * i == a) {
                     return true;
                 }
@@ -142,9 +142,11 @@ public class ServiceImpl implements Service {
     public String vietHoaFullName(String chuoi) {
         String full = "";
         String[] mang = chuoi.split("\\s+");
-        for (String ch : mang) {
-            full += new ServiceImpl().vietHoaChuDau(ch);
-            full += " ";
+        for (int i = 0; i < mang.length; i++) {
+            full += new ServiceImpl().vietHoaChuDau(mang[i]);
+            if (i < mang.length - 1) {
+                full += " ";
+            }
         }
         return full;
     }
