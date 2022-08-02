@@ -73,6 +73,7 @@ public class Main {
                 }
                 case 3: {
                     PhuongTrinhBac2 ptb2 = ptb2Impl.inputPtBac2();
+                    ptb2Impl.outputPtb2(ptb2);
                     ptb2Impl.giaiPTB2(ptb2);
                     break;
                 }

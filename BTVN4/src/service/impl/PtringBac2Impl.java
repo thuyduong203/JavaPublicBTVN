@@ -29,8 +29,13 @@ public class PtringBac2Impl implements PtrinhB2Service {
 
     @Override
     public void outputPtb2(PhuongTrinhBac2 ptb2) {
-        System.out.println("Phương trình b2: ");
-        System.out.println(ptb2.getA() + "x2" + ptb2.getB() + "x" + ptb2.getC());
+        if (ptb2.getA() == 0) {
+            System.out.println("Phương trình b1: ");
+            System.out.println(ptb2.getB() + "x + " + ptb2.getC() + " = 0");
+        } else {
+            System.out.println("Phương trình b2: ");
+            System.out.println(ptb2.getA() + "x2 + " + ptb2.getB() + "x + " + ptb2.getC() + " = 0");
+        }
     }
 
     @Override
