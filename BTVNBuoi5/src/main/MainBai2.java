@@ -114,7 +114,7 @@ public class MainBai2 {
                     break;
                 }
                 case 0: {
-                    System.out.println(" fix mảng thế này có hèn quá ko ạ@_@");
+                    System.out.println("@_@");
                     break;
                 }
                 default: {
