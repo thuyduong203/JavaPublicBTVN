@@ -97,34 +97,20 @@ public class MainBai2 {
                     }
                     System.out.println("Nhập ID cần xóa:");
                     String id = sc.nextLine();
-                    for (int i = 0; i < listST.size(); i++) {
-                        if (listST.get(i).getId().equals(id)) {
-                            listST.remove(i);
-
-                            for (Student student : listST) {
-                                for (int j = 0; j < n; j++) {
-                                    mangStudent[j] = student;
-                                }
-                            }
+                    int index = stImpl.getIndex(mangStudent, id);
+                    if (index == -1) {
+                        System.out.println("Không tìm thấy SV có ID " + id);
+                        break;
+                    } else {
+                        for (int i = index; i < n - 1; i++) {
+                            mangStudent[i] = mangStudent[i + 1];
+                        }
+                        n--;
+                        System.out.println("Sinh viên sau khi xóa: ");
+                        for (int i = 0; i < n; i++) {
+                            mangStudent[i].thongTinStudent();
                         }
                     }
-                    System.out.println("        Sau khi xóa:");
-                    for (Student student : listST) {
-                        student.thongTinStudent();
-                    }
-//                    int temp;
-//                    int i;
-//                    for (temp = i = 0; i < mangStudent.length; i++) {
-//                        if (mangStudent[i].getId().equals(id) == false) {
-//                            mangStudent[temp] = mangStudent[i];
-//                            temp++;
-//                        }
-//                    }
-//                    n = temp;
-////                    stImpl.delete(mangStudent, id);
-//                    for (Student student : mangStudent) {
-//                        student.thongTinStudent();
-//                    }
                     break;
                 }
                 case 0: {

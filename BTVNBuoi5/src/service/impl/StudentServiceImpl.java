@@ -49,19 +49,17 @@ public class StudentServiceImpl implements StudentService {
         }
     }
 
+
+
     @Override
-    public void delete(Student[] mangST, String id) {
-        int sz = mangST.length;
-        if (search(mangST, id) == null) {
-            System.out.println("Ko tìm thấy sinh viên có id " + id);
-        } else {
-            for (int i = 0; i < sz; i++) {
-                if (mangST[i].getId().equals(id)) {
-                    mangST[i] = mangST[i + 1];
-                }
-                sz--;
+    public int getIndex(Student[] mangST, String id) {
+        int index = -1;
+        for (int i = 0; i < mangST.length; i++) {
+            if (mangST[i].getId().equals(id)) {
+                index = i;
             }
         }
+        return index;
     }
 
 }

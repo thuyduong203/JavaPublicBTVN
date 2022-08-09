@@ -18,5 +18,5 @@ public interface StudentService {
 
     void changeProvince(Student[] mangST);
 
-    void delete(Student[] mangST, String id);
+    int getIndex(Student[] mangST, String id);
 }
